@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.paulz.towpageview.MainActivity">
+
+    <com.paulz.towpageview.TwoPageLayout
+        android:id="@+id/main_content"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <!--<ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">-->
+            <LinearLayout
+                android:id="@+id/layout_page1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_good_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/tv_promote_tip"
+                    android:minLines="3"
+                    android:background="@android:color/white"
+                    android:padding="5dp"
+                    android:text="杀寇决客流量卡可拉伸的"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_good_sub_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20px"
+                    android:text="卡萨丁卡机考老师的"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/layout_price_before"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="市场价："
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_price_before"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="￥118.00元"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="会员价："
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="0.00"
+                        android:textStyle="bold"
+                        android:textColor="#f98816"
+                        android:textSize="16sp" />
+
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="400dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_pull_up"
+                    android:drawablePadding="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="上拉查看更多"
+                    android:textSize="18sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginTop="10px"
+                    />
+
+            </LinearLayout>
+
+
+        <!--</ScrollView>-->
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                >
+                <RadioButton
+                    android:id="@+id/rb_detail"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/btn_white_and_yellow"
+                    android:background="@drawable/rb_bg_goods_detail"
+                    android:checked="true"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="图文详情"
+                    android:textSize="16sp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/rb_comments"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/btn_white_and_yellow"
+                    android:background="@drawable/rb_bg_goods_detail"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="商品评价"
+                    android:textSize="16sp"
+                    />
+            </RadioGroup>
+
+            <WebView
+                android:id="@+id/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+
+            <ListView
+                android:id="@+id/lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+    </com.paulz.towpageview.TwoPageLayout>
+</RelativeLayout>
